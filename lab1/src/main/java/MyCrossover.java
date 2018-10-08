@@ -15,22 +15,22 @@ public class MyCrossover extends AbstractCrossover<double[]> {
         // your implementation:
         double[] a1 = new double[p1.length];
         double[] a2 = new double[p1.length];
-        double prob = 0.7;
+        double prob = 0.3;
 
 
         for(int q= 0; q<p1.length; q++) {
 
             //uniform
-//            double p = random.nextDouble();
-//            if(p>prob){
-//                a1[q] = p1[q];
-//                a2[q] = p2[q];
-//            }
-//            else{
-//                a1[q] = p2[q];
-//                a2[q] = p1[q];
-//            }
-//            //one-point
+            double p = random.nextDouble();
+            if(p<prob){
+                a1[q] = p1[q];
+                a2[q] = p2[q];
+            }
+            else{
+                a1[q] = p2[q];
+                a2[q] = p1[q];
+            }
+            //one-point
 //            if(q<point){
 //                a1[q] = p1[q];
 //                a2[q] = p2[q];
@@ -40,15 +40,15 @@ public class MyCrossover extends AbstractCrossover<double[]> {
 //                a2[q] = p1[q];
 //            }
             //two-point
-            int point2 = random.nextInt((p1.length - (point)) + 1) + (point);
-            if (q < point || q > point2){
-                a1[q] = p1[q];
-                a2[q] = p2[q];
-            }
-            else {
-                a1[q] = p2[q];
-                a2[q] = p1[q];
-            }
+//            int point2 = random.nextInt((p1.length - (point)) + 1) + (point);
+//            if (q < point || q > point2){
+//                a1[q] = p1[q];
+//                a2[q] = p2[q];
+//            }
+//            else {
+//                a1[q] = p2[q];
+//                a2[q] = p1[q];
+//            }
 
         }
 

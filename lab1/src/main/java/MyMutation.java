@@ -6,13 +6,18 @@ import java.util.Random;
 public class MyMutation implements EvolutionaryOperator<double[]> {
     public List<double[]> apply(List<double[]> population, Random random) {
         int length_one = population.get(0).length;
-        double prob = 0.2;
+        double rate = 0.4;
+        double rate2 = 0.3;
         for (int i = 0; i < population.size(); i++) {
-            //v1
-            for (int j = 0; j < population.get(i).length; j++) {
-                population.get(i)[j] += (random.nextDouble() + random.nextInt()) % 5;
-            }
+            if (random.nextDouble() < rate) {
+                //v1
+                for (int j = 0; j < population.get(i).length; j++) {
+                    if (random.nextDouble() < rate2) {
+                        population.get(i)[j] += random.nextGaussian();//(random.nextDouble() + random.nextInt()) % 5;
+                    }
+                }
 
+            }
 //            //swap - less suitable than inversion
 //            double[]copy_current = population.get(i);
 //            int n_swap = 1;
@@ -37,7 +42,7 @@ public class MyMutation implements EvolutionaryOperator<double[]> {
 //                step++;
 //            }
 //
-//
+//            double prob = 0.2;
 //            for (int j = 0; j < population.get(i).length; j++) {
 //                double p = random.nextDouble();
 //                if (p < prob)
@@ -47,7 +52,7 @@ public class MyMutation implements EvolutionaryOperator<double[]> {
         }
 
 
-            return population;
+        return population;
 
     }
 }
