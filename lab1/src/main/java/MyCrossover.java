@@ -15,7 +15,7 @@ public class MyCrossover extends AbstractCrossover<double[]> {
         // your implementation:
         double[] a1 = new double[p1.length];
         double[] a2 = new double[p1.length];
-        double prob = 0.3;
+        double prob = 0.6;
 
 
         for(int q= 0; q<p1.length; q++) {
@@ -40,7 +40,7 @@ public class MyCrossover extends AbstractCrossover<double[]> {
 //                a2[q] = p1[q];
 //            }
             //two-point
-//            int point2 = random.nextInt((p1.length - (point)) + 1) + (point);
+//            int point2 = random.nextInt(p1.length - point) + 1 + point;
 //            if (q < point || q > point2){
 //                a1[q] = p1[q];
 //                a2[q] = p2[q];
