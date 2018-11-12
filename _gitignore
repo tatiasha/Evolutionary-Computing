@@ -1,4 +1,7 @@
 lab1/.idea/
+lab1/target
+lab2/.idea/
+lab2/target
 *.iml
 *.log
 *.tsv
